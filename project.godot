@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Conduit-"
+config/description="Developed in Godot 4.8.dev4"
+config/version="1.0"
+config/features=PackedStringArray("4.8", "GL Compatibility")
+config/icon="uid://2co5nonk55p2"
+
+[autoload]
+
+SignalBus="*uid://4r663j0itfrx"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Conduit/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/Conduit/": "blue",
+"res://addons/Conduit/Resources/": "teal",
+"res://addons/Conduit/Scripts/": "green",
+"res://addons/Conduit/Scripts/Data/": "red",
+"res://addons/Conduit/Scripts/Emitter/": "orange",
+"res://addons/Conduit/Scripts/ResourceScripts/": "teal"
+}
+
+[global_group]
+
+test=""
+
+[input_devices]
+
+joypads/ignore_joypad_on_unfocused_application=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/multi_bounce_occlusion/enabled=true

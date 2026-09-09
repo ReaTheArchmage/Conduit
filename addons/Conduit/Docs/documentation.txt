@@ -1,0 +1,38 @@
+Documentation:
+
+Classes:
+
+class Emitter (extends Node):
+Emitters have two main methods:
+
+1. connect:
+	connect(): a built-in gdscript method.
+	
+	connect_couples():
+		iterates on couples to connect signals and methods together.
+
+2. emit:
+	emit(): a built-in gdscript method.
+	
+	group_emit():
+		allows to emit grouped signals. It can also loop a signal group
+		emission.
+
+
+class AreaEmitter (extends Area3D):
+
+Special emitter that connects a signal to area_entered and area_exited of
+an area. The signal can be either global or local to the class instance.
+
+
+Resources:
+
+resource Package (extends Resource):
+Data structure that contains two dictionaries:
+ 
+1. Package.couples: {Signal, Method} or {StringName,StringName}
+	Used to store connections between signals and methods.
+
+2. Package.content: {Descriptor, AnyData} or {StringName, Variant}
+	Used to carry any type of data that derives from Variant, with a
+	descriptor StringName used for comparing the data.

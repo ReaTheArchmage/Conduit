@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Package" format=3 uid="uid://ccyfk0fdt8nhq"]
+
+[ext_resource type="Script" uid="uid://bmk0u2vwc50j8" path="res://addons/Conduit/Scripts/ResourceScripts/package.gd" id="1_2hllg"]
+
+[resource]
+script = ExtResource("1_2hllg")
+metadata/_custom_type_script = "uid://bmk0u2vwc50j8"
