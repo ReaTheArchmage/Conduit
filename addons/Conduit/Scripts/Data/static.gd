@@ -2,7 +2,7 @@
 class_name Static extends Node
 
 class Resources:
-
+	## Default resources used by classes.
 	class Default:
 		const DEF_AREA_EMITTER_PKG   =    preload("uid://02wucdaons1k")   
 		const DEF_EMPTY_PACKAGE      =    preload("uid://ccyfk0fdt8nhq")
@@ -12,8 +12,7 @@ class Utility:
 	const GLOBAL_GROUP_PREFIX := "global_group/"
 	static var _global_groups_cache: PackedStringArray = []
 
-	## Returns an array of all the global groups in the project
-	## and caches it.
+	## Returns an array of all the global groups in the project and caches it.
 	static func get_all_global_groups() -> PackedStringArray:
 		var current_groups: PackedStringArray = []
 

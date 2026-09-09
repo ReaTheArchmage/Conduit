@@ -12,6 +12,24 @@ var classes                      : Array[Object] = [self, SignalBus]
 @onready var ir_connect_couples = connect_couples(signal_registry
 ) if enable_connections else false
 
+## Connects signal/method couples from pkg.couples 
+func connect_couples(pkg: Package) -> bool:
+
+	if pkg.couples.is_empty():
+		push_warning("No connection assigned in the registry. ", name, " is inert.")
+
+	var couples = pkg.couples
+	for signal_name in couples: for _class in classes:
+
+		var signal_      =  Signal   (_class, signal_name)
+		var method_name: StringName = couples[signal_name]
+		var callable =  Callable (_class, method_name) 
+
+		if not signal_.is_connected(callable): 
+			signal_.connect(callable)
+
+	return true
+
 ## Emits global/local/default grouped signals, can loop emission.
 func group_emit(
 	signals: Array[StringName], args,
@@ -31,33 +49,3 @@ func group_emit(
 	if looped:
 		await get_tree().create_timer(delay_duration).timeout
 		group_emit(signals, args, looped, delay_duration)
-
-## Connects signal/method couples from pkg.couples 
-func connect_couples(pkg: Package) -> bool:
-
-	if pkg.couples.is_empty():
-		push_warning("No connection assigned in the registry. ", name, " is inert.")
-
-	var couples = pkg.couples
-	for signal_name in couples: for _class in classes:
-	
-		var signal_      =  Signal   (_class, signal_name)
-		var method_name: StringName = couples[signal_name]
-		var callable =  Callable (_class, method_name) 
-
-		if not signal_.is_connected(callable): 
-			signal_.connect(callable)
-
-	return true
-
-
-# TEST group_emit (looped):
-#func _ready() -> void: group_emit(true)
-# TEST group_emit (non looped):
-#func _ready() -> void: group_emit(false)
-# function:
-
-#var v = 0
-#func test_method():
-	#v += 1
-	#print("Signal Heard: ", v)
