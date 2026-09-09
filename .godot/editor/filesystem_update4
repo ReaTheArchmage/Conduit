@@ -1,3 +1,4 @@
 res://addons/Conduit/conduit_plugin.gd
 res://addons/Conduit/Scripts/Emitter/emitter.gd
 res://addons/Conduit/Scripts/Data/static.gd
+res://addons/Conduit/Docs/README.md

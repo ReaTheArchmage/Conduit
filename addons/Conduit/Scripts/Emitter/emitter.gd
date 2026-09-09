@@ -1,5 +1,4 @@
-## Standard class used to emit signals, has connect and emit extension
-## methods.
+## Standard class used to emit signals, has connect and emit extension methods.
 class_name Emitter extends Node
 @warning_ignore("unused_signal")
 ## Singnal emitted in absence of other signals.

@@ -15,7 +15,8 @@ Base class for connecting and emitting signals.
 
 - `signal_registry: Package` — Used for couples to connect on ready. (in Package.couples)
 - `enable_connections: bool` — auto-run `connect_couples()` on ready.
-- `connect_couples(pkg: Package) -> bool` — connects each `{signal: method}` couple in `pkg.couples`, across `self` and `SignalBus`.
+- `connect_couples(pkg: Package) -> bool` — connects each `{signal: method}` couple in `pkg.couples`,
+across `self` and `SignalBus`.
 - `group_emit(signals, args, looped, delay_duration = 2.0)` — emits a group of signals
 (local → `SignalBus` → `default_emitter_signal`, in that order), optionally looping on a delay.
 
