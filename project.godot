@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Conduit-"
-config/description="Developed in Godot 4.8.dev4"
+config/name="Conduit"
+config/description="A small signal-emission and connection system developed in Godot 4.8.dev4. Retrocompatibility almost certain."
 config/version="1.0"
+config/tags=PackedStringArray("custom_plugins")
 config/features=PackedStringArray("4.8", "GL Compatibility")
-config/icon="uid://2co5nonk55p2"
+config/icon="uid://drucliahcmvud"
 
 [autoload]
 
